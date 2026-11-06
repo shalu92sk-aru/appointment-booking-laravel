@@ -1,9 +1,9 @@
 <?php
-namespace App\\Http\\Controllers;
-use App\\Models\\Appointment;
-use App\\Models\\Service;
-use Illuminate\\Http\\Request;
-use Illuminate\\Support\\Facades\\Auth;
+namespace App\Http\Controllers;
+use App\Models\Appointment;
+use App\Models\Service;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller {
  public function loginForm(){return view('admin.login');}
  public function login(Request $r){$d=$r->validate(['email'=>'required|email','password'=>'required']); if(Auth::attempt($d+['is_admin'=>true])){$r->session()->regenerate();return redirect()->route('admin.dashboard');} return back()->withErrors(['email'=>'Invalid admin credentials.']);}

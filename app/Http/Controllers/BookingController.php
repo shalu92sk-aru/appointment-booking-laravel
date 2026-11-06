@@ -1,9 +1,9 @@
 <?php
-namespace App\\Http\\Controllers;
-use App\\Models\\Appointment;
-use App\\Models\\Service;
-use Illuminate\\Http\\Request;
-use Illuminate\\Validation\\ValidationException;
+namespace App\Http\Controllers;
+use App\Models\Appointment;
+use App\Models\Service;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 class BookingController extends Controller {
  public function index(){ $services=Service::where('is_active',true)->orderBy('name')->get(); return view('home',compact('services')); }
  public function store(Request $r){

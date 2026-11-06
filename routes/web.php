@@ -1,7 +1,7 @@
 <?php
-use Illuminate\\Support\\Facades\\Route;
-use App\\Http\\Controllers\\BookingController;
-use App\\Http\\Controllers\\AdminController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\AdminController;
 Route::get('/',[BookingController::class,'index'])->name('home');
 Route::post('/book',[BookingController::class,'store'])->name('booking.store');
 Route::get('/booking/{appointment}/success',[BookingController::class,'success'])->name('booking.success');
